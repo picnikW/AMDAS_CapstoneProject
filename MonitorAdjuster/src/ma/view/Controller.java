@@ -3,7 +3,7 @@ package ma.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -19,9 +19,9 @@ public class Controller {
 	@FXML
 	VBox userDInput;
 	@FXML
-	HBox editBtn;
+	Button editBtn;
 	@FXML
-	HBox confirmBtn;
+	Button confirmBtn;
 	
 	int DISPLAY_SCREEN = 0;
 	int ADD_SCREEN = 1;
