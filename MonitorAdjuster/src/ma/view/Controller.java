@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+<<<<<<< HEAD
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,9 +28,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
+=======
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+>>>>>>> a9b30345622d21c077d18006682c53a62fbfbff3
 import javafx.stage.Stage;
 
 public class Controller {
+<<<<<<< HEAD
 	@FXML
 	HBox buttons;
 	@FXML
@@ -75,10 +83,27 @@ public class Controller {
 	@FXML
 	TextField albumInput;
 
+=======
+	//Btns and Labels
+	@FXML
+	VBox rightCol;
+	@FXML
+	VBox leftCol;
+	@FXML
+	VBox userDDisplay;
+	@FXML
+	VBox userDInput;
+	@FXML
+	Button editBtn;
+	@FXML
+	Button confirmBtn;
+	
+>>>>>>> a9b30345622d21c077d18006682c53a62fbfbff3
 	int DISPLAY_SCREEN = 0;
 	int ADD_SCREEN = 1;
 	int EDIT_SCREEN = 2;
 	int screenId = DISPLAY_SCREEN;
+<<<<<<< HEAD
 
 	public void start(Stage mainStage) throws Exception {
 		// load songs from csv file
@@ -307,6 +332,22 @@ public class Controller {
 		String content = song.getSong();
 		alert.setContentText(content);
 		alert.showAndWait();
+=======
+	
+	public void start(Stage mainStage) throws Exception {
+		 mainStage.setTitle("AMDAS Welcome");
+	        
+	        mainStage.show();
+	}
+	
+	public void DisplayData(Stage mainStage) {
+                
+				leftCol.getChildren().contains(userDDisplay); {
+				leftCol.getChildren().remove(userDInput);
+				leftCol.getChildren().add(editBtn);
+				screenId = DISPLAY_SCREEN;
+			}
+>>>>>>> a9b30345622d21c077d18006682c53a62fbfbff3
 
 		// get alert result
 		if (alert.getResult() == ButtonType.OK) {
@@ -335,6 +376,7 @@ public class Controller {
 		}
 	}
 	
+<<<<<<< HEAD
 	public void resetInputs() {
 		titleInput.setText("");
 		artistInput.setText("");
@@ -545,4 +587,24 @@ public class Controller {
 			changeToSongDisplay();
 		}
 	}
+=======
+	public void toggleButtonDisplay() {
+		if (rightCol.getChildren().contains(editBtn)) {
+			rightCol.getChildren().remove(confirmBtn);
+
+		} else {
+			rightCol.getChildren().add(confirmBtn);
+		}
+	}
+	
+	public void changeToAddDisplay(ActionEvent e) {
+		toggleButtonDisplay();
+		rightCol.getChildren().remove(userDDisplay);
+		rightCol.getChildren().add(userDInput);
+		screenId = ADD_SCREEN;
+		
+
+	}
+
+>>>>>>> a9b30345622d21c077d18006682c53a62fbfbff3
 }

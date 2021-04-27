@@ -11,19 +11,19 @@ import ma.view.Controller;
 
 
 public class MonitorAdj extends Application {
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage mainStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/ma/view/monitorAdj.fxml"));
 		// main screen
 		SplitPane root = (SplitPane) loader.load();
 		Controller Controller = loader.getController();
-		Controller.start(primaryStage);
+		Controller.start(mainStage);
 
 		Scene scene = new Scene(root, 727, 467);
-	    primaryStage.setScene(scene);
-		primaryStage.setTitle("Monitor D Adjust");
-		primaryStage.setResizable(false);
-		primaryStage.show();
+	    mainStage.setScene(scene);
+		mainStage.setTitle("Monitor D Adjust");
+		mainStage.setResizable(false);
+		mainStage.show();
 		
 	}
 
